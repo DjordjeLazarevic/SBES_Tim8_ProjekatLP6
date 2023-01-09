@@ -1,0 +1,2 @@
+C:\Users\Pantelic\Documents\FAKS\_SAD DATI\SBES\Projekat_sbes\Projekat6\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Pantelic\Documents\FAKS\_SAD DATI\SBES\Projekat_sbes\Projekat6\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
