@@ -1,4 +1,4 @@
-﻿using IServis;
+﻿using Common;
 using SecurityManager;
 using Server;
 using System;
@@ -15,6 +15,7 @@ namespace Server
 {
     public class Program
     {
+        
         static void Main(string[] args)
         {
             NetTcpBinding binding = new NetTcpBinding();
@@ -28,22 +29,34 @@ namespace Server
             ServiceHost host = new ServiceHost(typeof(SecurityServer));
             host.AddServiceEndpoint(typeof(IServerTimer), binding, address);
 
-           /* host.Authorization.PrincipalPermissionMode = PrincipalPermissionMode.Custom;
+            host.Authorization.PrincipalPermissionMode = PrincipalPermissionMode.Custom;
             List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>();
             policies.Add(new CustomAuthorizationPolicy());
-            host.Authorization.ExternalAuthorizationPolicies = policies.AsReadOnly();*/
+            host.Authorization.ExternalAuthorizationPolicies = policies.AsReadOnly();
+
+            //log
+            ServiceSecurityAuditBehavior newAudit = new ServiceSecurityAuditBehavior();
+            newAudit.AuditLogLocation = AuditLogLocation.Application;
+            newAudit.ServiceAuthorizationAuditLevel = AuditLevel.SuccessOrFailure;
+
+            host.Description.Behaviors.Remove<ServiceSecurityAuditBehavior>();
+            host.Description.Behaviors.Add(newAudit);
+
 
 
             host.Open();
 
             //Console.WriteLine("Korisnik koji je pokrenuo servera :" + WindowsIdentity.GetCurrent().Name);
-            Console.WriteLine("Server je pokrenut Djole!\n");
-            
+            Console.WriteLine("Server je pokrenut!\n");
+
+
+
             Console.ReadLine();
 
 
 
 
         }
+        
     }
 }

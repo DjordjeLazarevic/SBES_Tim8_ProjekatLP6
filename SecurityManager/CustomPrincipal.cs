@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SecurityManager
 {
-    class CustomPrincipal : IPrincipal
+    public class CustomPrincipal : IPrincipal
     {
         WindowsIdentity identity = null;
         public CustomPrincipal(WindowsIdentity windowsIdentity)
@@ -30,9 +30,16 @@ namespace SecurityManager
                 string[] permissions;
                 if (RolesConfig.GetPermissions(groupName, out permissions))
                 {
-                    if (permissions.Contains(permission))
+                    try
                     {
-                        return true;
+                        if (permissions.Contains(permission))
+                        {
+                            return true;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Greska, nije dozvoljena ova permisija! {0}", e.Message);
                     }
                 }
             }

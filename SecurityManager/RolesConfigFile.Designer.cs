@@ -59,5 +59,32 @@ namespace SecurityManager {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to StartStop,Change,See.
+        /// </summary>
+        internal static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to StartStop,See.
+        /// </summary>
+        internal static string Modifier {
+            get {
+                return ResourceManager.GetString("Modifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See.
+        /// </summary>
+        internal static string Reader {
+            get {
+                return ResourceManager.GetString("Reader", resourceCulture);
+            }
+        }
     }
 }
