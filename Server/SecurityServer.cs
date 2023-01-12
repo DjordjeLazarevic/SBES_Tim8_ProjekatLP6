@@ -49,7 +49,15 @@ namespace Server
                 }
             }
             else
-            {
+            {            
+                try
+                {
+                    Audit.PokreniTimerNeuspesno(userName);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 Console.WriteLine("Klijent {0} nema permisiju za akciju pokreni tajmer!\n", userName);
             }
         }
@@ -72,12 +80,21 @@ namespace Server
                 }
                 catch (Exception e)
                 {
+
                     Console.WriteLine(e.Message);
                 }
             }
             else
             {
-                Console.WriteLine("Klijent {0} nema permisiju za akciju zaustavi tajmer!\n", userName);
+                try
+                {
+                    Audit.ZaustaviTimerNeuspesno(userName);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                Console.WriteLine("Klijent {0} nema permisiju za akciju zaustavi tajmer!\n", userName);             
             }    
         }
 
@@ -93,9 +110,27 @@ namespace Server
                 mojTimer.Enabled = false;
                 mojTimer.Elapsed -= mojTimer_Elapsed;
                 Console.WriteLine("Tajmer je ponisten!\n");
+                try
+                {
+                    Audit.PonistiTimerUspesno(userName);
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                }
             }
             else
             {
+                try
+                {
+                    Audit.PonistiTimerNeuspesno(userName);
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 Console.WriteLine("Klijent {0} nema permisiju za akciju ponisti tajmer!\n", userName);
             }
         }
@@ -109,10 +144,28 @@ namespace Server
             {
                 counter = i;
                 Console.WriteLine("Tajmer je postavljen na vrednost: " + counter);
+                try
+                {
+                    Audit.PostaviTimerUspesno(userName);
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                }
             }
             else
             {
-                Console.WriteLine("Klijent {0} nema permisiju za akciju postavi tajmer!\n", userName);
+                try
+                {
+                    Audit.PostaviTimerNeuspesno(userName);
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                Console.WriteLine("Klijent {0} nema permisiju za akciju postavi tajmer!\n", userName);       
             }
         }
 

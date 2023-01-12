@@ -61,7 +61,16 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uspesno pokrenut: {0}.
+        ///   Looks up a localized string similar to Neuspesno pokrenut timer korisnika:{0}.
+        /// </summary>
+        internal static string PokreniTimerNeuspesno {
+            get {
+                return ResourceManager.GetString("PokreniTimerNeuspesno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uspesno pokrenut timer korisnika:{0}.
         /// </summary>
         internal static string PokreniTimerUspesno {
             get {
@@ -70,7 +79,16 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uspesno ponisten: {2}.
+        ///   Looks up a localized string similar to Neuspesno ponisti timer korisnika:{0}.
+        /// </summary>
+        internal static string PonistiTimerNeuspesno {
+            get {
+                return ResourceManager.GetString("PonistiTimerNeuspesno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uspesno ponisten timer korisnika:{0}.
         /// </summary>
         internal static string PonistiTimerUspesno {
             get {
@@ -79,7 +97,16 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uspesno postavljen: {3}.
+        ///   Looks up a localized string similar to Neuspesno postavljen timer korisnika:{0}.
+        /// </summary>
+        internal static string PostaviTimerNeuspesno {
+            get {
+                return ResourceManager.GetString("PostaviTimerNeuspesno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uspesno postavljen timer korisnika:{0}.
         /// </summary>
         internal static string PostaviTimerUspesno {
             get {
@@ -88,7 +115,16 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uspesno zaustavljen: {1}.
+        ///   Looks up a localized string similar to Neuspesno zaustavljen timer korisnika:{0}.
+        /// </summary>
+        internal static string ZaustaviTimerNeuspesno {
+            get {
+                return ResourceManager.GetString("ZaustaviTimerNeuspesno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uspesno zaustavljen timer korisnika:{0}.
         /// </summary>
         internal static string ZaustaviTimerUspesno {
             get {

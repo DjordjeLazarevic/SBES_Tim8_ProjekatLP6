@@ -117,16 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="PokreniTimerNeuspesno" xml:space="preserve">
+    <value>Neuspesno pokrenut timer korisnika:{0}</value>
+  </data>
   <data name="PokreniTimerUspesno" xml:space="preserve">
-    <value>Uspesno pokrenut: {0}</value>
+    <value>Uspesno pokrenut timer korisnika:{0}</value>
+  </data>
+  <data name="PonistiTimerNeuspesno" xml:space="preserve">
+    <value>Neuspesno ponisti timer korisnika:{0}</value>
   </data>
   <data name="PonistiTimerUspesno" xml:space="preserve">
-    <value>Uspesno ponisten: {2}</value>
+    <value>Uspesno ponisten timer korisnika:{0}</value>
+  </data>
+  <data name="PostaviTimerNeuspesno" xml:space="preserve">
+    <value>Neuspesno postavljen timer korisnika:{0}</value>
   </data>
   <data name="PostaviTimerUspesno" xml:space="preserve">
-    <value>Uspesno postavljen: {3}</value>
+    <value>Uspesno postavljen timer korisnika:{0}</value>
+  </data>
+  <data name="ZaustaviTimerNeuspesno" xml:space="preserve">
+    <value>Neuspesno zaustavljen timer korisnika:{0}</value>
   </data>
   <data name="ZaustaviTimerUspesno" xml:space="preserve">
-    <value>Uspesno zaustavljen: {1}</value>
+    <value>Uspesno zaustavljen timer korisnika:{0}</value>
   </data>
 </root>
