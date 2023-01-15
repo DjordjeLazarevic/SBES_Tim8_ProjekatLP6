@@ -17,7 +17,7 @@ namespace SecurityManager
         /// <param name="inFile"> filepath where plaintext is stored </param>
         /// <param name="outFile"> filepath where cipher text is expected to be stored </param>
         /// <param name="secretKey"> symmetric encryption key </param>
-        public static void EncryptFile(string inFile, string outFile, string secretKey, CipherMode mode)
+        public static void EncryptFile(string inFile, string outFile, string secretKey)
         {
             byte[] header = null;   //image header (54 byte) should not be encrypted
             byte[] body = null;     //image body to be encrypted
@@ -27,24 +27,10 @@ namespace SecurityManager
 
             DESCryptoServiceProvider desCryptoProvider = new DESCryptoServiceProvider();
             desCryptoProvider.Key = ASCIIEncoding.ASCII.GetBytes(secretKey);
-            desCryptoProvider.Mode = mode;
+            desCryptoProvider.Mode = CipherMode.CBC;
             desCryptoProvider.Padding = PaddingMode.None;
 
-            if (mode.Equals(CipherMode.ECB))
-            {
-                ICryptoTransform desEncryptTransform = desCryptoProvider.CreateEncryptor();
-
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    using (CryptoStream cryptoStream = new CryptoStream(memoryStream, desEncryptTransform, CryptoStreamMode.Write))
-                    {
-                        cryptoStream.Write(body, 0, body.Length);
-                        encryptedBody = memoryStream.ToArray();                              //encrypted image body
-                    }
-                }
-            }
-            else if (mode.Equals(CipherMode.CBC))
-            {
+           
                 desCryptoProvider.GenerateIV();
 
                 ICryptoTransform desEncryptTransform = desCryptoProvider.CreateEncryptor();
@@ -58,7 +44,7 @@ namespace SecurityManager
                     }
                 }
 
-            }
+            
 
             int outputLenght = header.Length + encryptedBody.Length;                 //header.Length + body.Length
             Formatter.Compose(header, encryptedBody, outputLenght, outFile);
@@ -71,7 +57,7 @@ namespace SecurityManager
         /// <param name="inFile"> filepath where cipher text is stored </param>
         /// <param name="outFile"> filepath where plain text is expected to be stored </param>
         /// <param name="secretKey"> symmetric encryption key </param>
-        public static void DecryptFile(string inFile, string outFile, string secretKey, CipherMode mode)
+        public static void DecryptFile(string inFile, string outFile, string secretKey)
         {
             byte[] header = null;       //image header (54 byte) should not be decrypted
             byte[] body = null;         //image body to be decrypted
@@ -83,23 +69,10 @@ namespace SecurityManager
 
             DESCryptoServiceProvider desCryptoProvider = new DESCryptoServiceProvider();
             desCryptoProvider.Key = ASCIIEncoding.ASCII.GetBytes(secretKey);
-            desCryptoProvider.Mode = mode;
+            desCryptoProvider.Mode = CipherMode.CBC;
             desCryptoProvider.Padding = PaddingMode.None;
 
-            if (mode.Equals(CipherMode.ECB))
-            {
-                ICryptoTransform desDecryptTransform = desCryptoProvider.CreateDecryptor();
-                using (MemoryStream memoryStream = new MemoryStream(body))
-                {
-                    using (CryptoStream cryptoStream = new CryptoStream(memoryStream, desDecryptTransform, CryptoStreamMode.Read))
-                    {
-                        decryptedBody = new byte[body.Length];       //decrypted image body - the same lenght as encrypted part
-                        cryptoStream.Read(decryptedBody, 0, decryptedBody.Length);
-                    }
-                }
-            }
-            else if (mode.Equals(CipherMode.CBC))
-            {
+            
                 desCryptoProvider.IV = body.Take(desCryptoProvider.BlockSize / 8).ToArray();                // take the iv off the beginning of the ciphertext message			
 
                 ICryptoTransform desDecryptTransform = desCryptoProvider.CreateDecryptor();
@@ -112,7 +85,7 @@ namespace SecurityManager
                         cryptoStream.Read(decryptedBody, 0, decryptedBody.Length);
                     }
                 }
-            }
+            
 
             int outputLenght = header.Length + decryptedBody.Length;
 
