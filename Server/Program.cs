@@ -46,7 +46,7 @@ namespace Server
 
             host.Open();
 
-            //Console.WriteLine("Korisnik koji je pokrenuo servera :" + WindowsIdentity.GetCurrent().Name);
+            Console.WriteLine("Korisnik koji je pokrenuo servera :" + WindowsIdentity.GetCurrent().Name);
             Console.WriteLine("Server je pokrenut!\n");
 
 

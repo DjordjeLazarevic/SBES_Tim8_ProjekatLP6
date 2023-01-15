@@ -11,8 +11,7 @@ namespace SecurityManager
 	public enum AuditEventTypes
 	{
 
-		//promeni na svoje metode
-		//razlika izmedju modova
+		
 
 		PokreniTimerUspesno = 0,
 		ZaustaviTimerUspesno = 1,

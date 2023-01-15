@@ -27,7 +27,7 @@ namespace Client
             ChannelFactory<IServerTimer> factory = new ChannelFactory<IServerTimer>(binding, address);
             IServerTimer kanal;
 
-            //Console.WriteLine("Korisnik koji je pokrenuo servera :" + WindowsIdentity.GetCurrent().Name);
+            Console.WriteLine("Korisnik koji je pokrenuo servera :" + System.Security.Principal.WindowsIdentity.GetCurrent().Name);
 
 
             int b, c;
