@@ -10,9 +10,6 @@ namespace SecurityManager
 {
 	public enum AuditEventTypes
 	{
-
-		
-
 		PokreniTimerUspesno = 0,
 		ZaustaviTimerUspesno = 1,
 		PonistiTimerUspesno = 2,

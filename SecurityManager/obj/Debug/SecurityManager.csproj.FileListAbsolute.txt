@@ -16,3 +16,12 @@ C:\Users\Pantelic\Documents\FAKS\_SAD DATI\SBES\Projekat_sbes\SBES_Tim8_Projekat
 C:\Users\Pantelic\Documents\FAKS\_SAD DATI\SBES\Projekat_sbes\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
 C:\Users\Pantelic\Documents\FAKS\_SAD DATI\SBES\Projekat_sbes\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.dll
 C:\Users\Pantelic\Documents\FAKS\_SAD DATI\SBES\Projekat_sbes\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.pdb
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.AuditEventFile.resources
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.RolesConfigFile.resources
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.csproj.GenerateResource.cache
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\Djoka\New folder\Desktop\SBES\SBES_Tim8_ProjekatLP6\SecurityManager\obj\Debug\SecurityManager.pdb
